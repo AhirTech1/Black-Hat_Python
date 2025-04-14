@@ -9,4 +9,32 @@ Host: google.com
 Host: ghost
 
 
-###
+###Output for netcat.py
+##1
+Listener side command - python netcat.py -t 0.0.0.0 -p 5555 -l -c
+Sender Output -
+┌──(kali㉿kali)-[~/PycharmProjects/Black-Hat_Python/Networking]
+└─$ python netcat.py -t 0.0.0.0 -p 5555
+BHP: #>
+> ls -al
+total 32
+drwxrwxr-x 2 ghost ghost 4096 Apr 14 13:27 .
+drwxrwxr-x 5 ghost ghost 4096 Apr 14 10:50 ..
+-rw-rw-r-- 1 ghost ghost 4228 Apr 14 13:27 netcat.py
+-rw-rw-r-- 1 ghost ghost  287 Apr 14 12:18 Outputs.txt
+-rw-rw-r-- 1 ghost ghost  366 Apr 14 11:07 TCPClient.py
+-rw-rw-r-- 1 ghost ghost  691 Apr 14 11:05 TCPServer.py
+-rw-rw-r-- 1 ghost ghost  308 Apr 14 11:19 UDPClient.py
+BHP: #>
+>
+
+##2
+Listener side command - python netcat.py -t 0.0.0.0 -p 5555 -l -e="cat /etc/passwd"
+Sender Output -
+┌──(kali㉿kali)-[~/PycharmProjects/Black-Hat_Python/Networking]
+└─$ python netcat.py -t 0.0.0.0 -p 5555
+root:x:0:0:root:/root:/usr/bin/zsh
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+....... etc etc .......
