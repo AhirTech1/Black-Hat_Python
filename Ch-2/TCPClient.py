@@ -1,7 +1,7 @@
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+target_host = "0.0.0.0"
+target_port = 9999
 
 #create a socket object
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -12,7 +12,7 @@ client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((target_host, target_port))
 
 # send some data
-client.send(b"GET / HTTP/1.1\r\nHOST: google.com\r\n\r\n")
+client.send(b"ACK?")
 # GET - to retrieve some kind of resource
 # / - root path of the website (maybe home page)
 # HTTP/1.1 - version of HTTP
